@@ -1,0 +1,32 @@
+{
+  "name": "api-meteo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API météo TypeScript à couplage faible, avec IoC et injection de dépendances.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "tsx watch --env-file-if-exists=.env src/main.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node --env-file-if-exists=.env dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:unit": "vitest run --project unit",
+    "test:e2e": "vitest run --project e2e",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm run build"
+  },
+  "dependencies": {
+    "fastify": "5.12.3",
+    "inversify": "8.2.3",
+    "zod": "4.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.2",
+    "tsx": "4.23.13",
+    "typescript": "6.0.3",
+    "vitest": "4.1.11"
+  }
+}
